@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { brand } from '~/utils/brand'
 
-const { data: posts } = await useAsyncData('home-blog',
-  () => queryCollection('blog').where('published', '=', true).order('date', 'DESC').limit(2).all()
-)
-
 useSeoMeta({ title: `${brand.name} — Extra Virgin Olive Oil`, description: brand.description })
 
 const oils = [
