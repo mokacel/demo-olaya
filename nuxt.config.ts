@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/color-mode',
     '@vueuse/nuxt',
-    'nuxt-og-image',
     'motion-v/nuxt'
   ],
 
