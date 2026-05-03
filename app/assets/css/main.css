@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@source "../../../content/**/*";
+
+@theme static {
+  --font-sans: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Georgia', serif;
+  --font-mono: 'Inconsolata', monospace;
+
+  /* Terracotta accent */
+  --color-primary-50:  #fdf2ee;
+  --color-primary-100: #f9e0d6;
+  --color-primary-200: #f2beac;
+  --color-primary-300: #e8957b;
+  --color-primary-400: #d97050;
+  --color-primary-500: #c0543a;
+  --color-primary-600: #a04330;
+  --color-primary-700: #803527;
+  --color-primary-800: #5f271d;
+  --color-primary-900: #3f1a12;
+  --color-primary-950: #200d09;
+}
+
+:root {
+  --color-background: #f6f0e4;
+  --color-foreground: #1a1710;
+  --color-border: #d8ccb8;
+  --color-muted: #ede5d4;
+  --color-muted-foreground: #7a6f5c;
+  --color-olive: #3b4a2c;
+}
+
+.dark {
+  --color-background: #161410;
+  --color-foreground: #f0ead8;
+  --color-border: #2e2a22;
+  --color-muted: #1e1c16;
+  --color-muted-foreground: #9a8f7a;
+  --color-primary-500: #d97050;
+  --color-olive: #7a9a5c;
+}
+
+::selection {
+  color: #f6f0e4;
+  background-color: var(--color-primary-500);
+}
+
+a, button {
+  cursor: pointer;
+}
+
+.dark ::selection {
+  color: #161410;
+  background-color: var(--color-primary-400);
+}
