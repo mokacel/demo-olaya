@@ -2,7 +2,7 @@
 // TODO: migrate variants to CVA (class-variance-authority) for typed, composable styling
 // See: https://cva.style — same pattern shadcn-vue uses
 
-defineProps<{
+const props = defineProps<{
   variant?: 'primary' | 'ghost' | 'outline' | 'white'
   size?: 'sm' | 'md' | 'lg'
   type?: 'button' | 'submit'
@@ -10,6 +10,8 @@ defineProps<{
   loading?: boolean
   disabled?: boolean
 }>()
+
+const NuxtLink = resolveComponent('NuxtLink')
 
 const variantClass = {
   primary: 'border border-primary-500 text-primary-500 bg-transparent hover:bg-primary-500 hover:text-white focus-visible:ring-primary-500 transition-all duration-200',
@@ -27,7 +29,7 @@ const sizeClass = {
 
 <template>
   <component
-    :is="to ? resolveComponent('NuxtLink') : 'button'"
+    :is="to ? NuxtLink : 'button'"
     :to="to"
     :type="to ? undefined : (type ?? 'button')"
     :disabled="disabled || loading"

@@ -148,7 +148,7 @@ const testimonials = [
     </section>
 
     <!-- Craft — olives texture background with frosted card -->
-    <section class="relative overflow-hidden border-y border-(--color-border) min-h-[75vh] flex items-center py-16">
+    <section id="how" class="relative overflow-hidden border-y border-(--color-border) min-h-[75vh] flex items-center py-16">
       <img
         src="/olives.jpg"
         alt=""
@@ -203,28 +203,6 @@ const testimonials = [
         </BaseButton>
       </div>
     </section>
-
-    <!-- Journal -->
-    <section v-if="posts?.length" class="py-24 border-b border-(--color-border)">
-      <div class="max-w-5xl mx-auto px-6">
-        <div class="flex items-end justify-between mb-16">
-          <h2 class="font-serif text-4xl md:text-5xl font-light italic">From the journal</h2>
-          <BaseButton to="/blog" variant="ghost" size="sm">All entries →</BaseButton>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8">
-          <CardBlog
-            v-for="post in posts"
-            :key="post.path"
-            :title="post.title"
-            :description="post.description"
-            :date="post.date"
-            :to="post.path"
-            :min-read="post.minRead"
-          />
-        </div>
-      </div>
-    </section>
-
     <SectionContact />
   </div>
 </template>
